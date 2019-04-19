@@ -6,19 +6,44 @@ public class Metodos {
 
 	public static void main(String[] args) {
 		
-		System.out.println("*******************************************");
-		System.out.println("BIENVENIDO A IMPRESS++");
-		System.out.println("*******************************************");
-		String nombre = JOptionPane.showInputDialog("Ingrese su nombre:");
-		System.out.println("Bienvenido "+nombre+", te pedimos por favor completes"
-				+ " las preguntas.");
-		String dni = JOptionPane.showInputDialog("Ingrese su DNI:");
-		String apellido = JOptionPane.showInputDialog("Ingrese su apellido:");
-		String direccion = JOptionPane.showInputDialog("Ingrese su direccion:");
+		String userGeneral = JOptionPane.showInputDialog("Responda con Honestidad:\n"
+				+ "Si es un usuario nuevo escriba --> n\n"
+				+ "Si es un obrero escriba --> o");
 		
-		Persona usuario1 = new Persona(dni,nombre,apellido,direccion);
-		System.out.println("Sus datos se registraron con exio. \n========================>");
-		System.out.println(usuario1.mostrarDatos());
+		if(userGeneral.equalsIgnoreCase("n")) {
+			System.out.println("*******************************************");
+			System.out.println("BIENVENIDO A IMPRESS++\n");
+			System.out.println("*******************************************");
+			String nombre = JOptionPane.showInputDialog("Ingrese su nombre:");
+			System.out.println("Bienvenido "+nombre+", te pedimos por favor completes"
+					+ " las preguntas.");
+			String dni = JOptionPane.showInputDialog("Ingrese su DNI:");
+			String apellido = JOptionPane.showInputDialog("Ingrese su apellido:");
+			String direccion = JOptionPane.showInputDialog("Ingrese su direccion:");
+			
+			Persona usuario1 = new Persona(dni,nombre,apellido,direccion);
+			System.out.println("Sus datos se registraron con exio. \n========================>");
+			System.out.println(usuario1.mostrarDatos());
+			JOptionPane.showMessageDialog(null, "Registro finalizado.");
+		}else {
+			if(userGeneral.equalsIgnoreCase("o")) {
+				System.out.println("*********************************************");
+				System.out.println("BIENVENIDO A IMPRESS++\n");
+				System.out.println("*********************************************");
+				String nombre = JOptionPane.showInputDialog("Ingrese su nombre: ");
+				String dni = JOptionPane.showInputDialog("Ingrese su DNI: ");
+				String apellido = JOptionPane.showInputDialog("Ingrese su apellido:");
+				String direccion = JOptionPane.showInputDialog("Ingrese de direccion:");
+				String area = JOptionPane.showInputDialog("Ingrese su area:");
+				String cargo = JOptionPane.showInputDialog("Ingrese su cargo:");
+				String sueldo = JOptionPane.showInputDialog("Ingrese su sueldo:");
+				Float fSueldo = new Float(sueldo);
+				//fSueldo = Float.parseFloat(sueldo);
+			}else {
+				JOptionPane.showMessageDialog(null,"Gracias por su visita.");
+			}
+		}
+
 	}
 
 }
