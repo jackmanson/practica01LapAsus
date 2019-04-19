@@ -1,12 +1,24 @@
 package Principal;
 
+import javax.swing.JOptionPane;
+
 public class Metodos {
 
 	public static void main(String[] args) {
 		
 		System.out.println("*******************************************");
+		System.out.println("BIENVENIDO A IMPRESS++");
+		System.out.println("*******************************************");
+		String nombre = JOptionPane.showInputDialog("Ingrese su nombre:");
+		System.out.println("Bienvenido "+nombre+", te pedimos por favor completes"
+				+ " las preguntas.");
+		String dni = JOptionPane.showInputDialog("Ingrese su DNI:");
+		String apellido = JOptionPane.showInputDialog("Ingrese su apellido:");
+		String direccion = JOptionPane.showInputDialog("Ingrese su direccion:");
 		
-
+		Persona usuario1 = new Persona(dni,nombre,apellido,direccion);
+		System.out.println("Sus datos se registraron con exio. \n========================>");
+		System.out.println(usuario1.mostrarDatos());
 	}
 
 }
@@ -50,6 +62,12 @@ class Persona{
 	}
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+	
+	// Metodo
+	public String mostrarDatos() {
+		return "DNI: "+getDni()+"\nNOMBRE: "+getNombre()+"\nAPELLIDO: "+getApellido()
+		+"\nDIRECCION: "+getDireccion();
 	}
 }
 
