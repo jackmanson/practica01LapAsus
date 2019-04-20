@@ -44,8 +44,10 @@ public class Metodos {
 				usuario2.setSueldo(fSueldo);
 				System.out.println("Sus datos se registraron con exio.\n========================>\n\n");
 				System.out.println(usuario2.MostrarDatos());
+				NumeroRound numero = new NumeroRound(528.56);
+				numero.redondeoNum(15.20);
+				numero.redondeoNum(15.25f);
 				JOptionPane.showMessageDialog(null, "Registro finalizado.");
-				
 			}else {
 				JOptionPane.showMessageDialog(null,"Gracias por su visita.");
 			}
@@ -53,7 +55,7 @@ public class Metodos {
 
 	}
 
-}
+} 
 
 class Persona{
 	
