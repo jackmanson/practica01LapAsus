@@ -11,9 +11,9 @@ public class Metodos {
 				+ "Si es un obrero escriba --> o");
 		
 		if(userGeneral.equalsIgnoreCase("n")) {
-			System.out.println("*******************************************");
+			System.out.println("*******************************************\n");
 			System.out.println("BIENVENIDO A IMPRESS++\n");
-			System.out.println("*******************************************");
+			System.out.println("*******************************************\n");
 			String nombre = JOptionPane.showInputDialog("Ingrese su nombre:");
 			System.out.println("Bienvenido "+nombre+", te pedimos por favor completes"
 					+ " las preguntas.");
@@ -22,23 +22,30 @@ public class Metodos {
 			String direccion = JOptionPane.showInputDialog("Ingrese su direccion:");
 			
 			Persona usuario1 = new Persona(dni,nombre,apellido,direccion);
-			System.out.println("Sus datos se registraron con exio. \n========================>");
+			System.out.println("Sus datos se registraron con exio. \n ========================>");
 			System.out.println(usuario1.mostrarDatos());
 			JOptionPane.showMessageDialog(null, "Registro finalizado.");
 		}else {
 			if(userGeneral.equalsIgnoreCase("o")) {
-				System.out.println("*********************************************");
+				System.out.println("*********************************************\n");
 				System.out.println("BIENVENIDO A IMPRESS++\n");
-				System.out.println("*********************************************");
+				System.out.println("*********************************************\n");
 				String nombre = JOptionPane.showInputDialog("Ingrese su nombre: ");
 				String dni = JOptionPane.showInputDialog("Ingrese su DNI: ");
 				String apellido = JOptionPane.showInputDialog("Ingrese su apellido:");
 				String direccion = JOptionPane.showInputDialog("Ingrese de direccion:");
 				String area = JOptionPane.showInputDialog("Ingrese su area:");
 				String cargo = JOptionPane.showInputDialog("Ingrese su cargo:");
-				String sueldo = JOptionPane.showInputDialog("Ingrese su sueldo:");
-				Float fSueldo = new Float(sueldo);
+				String sueldo = JOptionPane.showInputDialog("Ingrese su sueldo:"); 
+				Float fSueldo = new Float(sueldo); // Convierte el String -> float
 				//fSueldo = Float.parseFloat(sueldo);
+								
+				Obrero usuario2 = new Obrero(dni,nombre,apellido,direccion,area,cargo);
+				usuario2.setSueldo(fSueldo);
+				System.out.println("Sus datos se registraron con exio.\n========================>\n\n");
+				System.out.println(usuario2.MostrarDatos());
+				JOptionPane.showMessageDialog(null, "Registro finalizado.");
+				
 			}else {
 				JOptionPane.showMessageDialog(null,"Gracias por su visita.");
 			}
@@ -144,8 +151,9 @@ class Obrero extends Persona{
 		this.sueldo = sueldo;
 	}
 	
-	//Metodos
+	//Metodos 
 	public String MostrarDatos(){
-		return "DNI: "+super.getDni()+" Nombre: "+super.getNombre()+" Apellido: "+super.getApellido();
+		return "DNI: "+super.getDni()+"\nNombre: "+super.getNombre()+"\nApellido: "+super.getApellido()
+		+"\nDireccion: "+super.getDireccion()+"\nArea: "+getArea()+"\nCargo: "+getCargo()+"\nSueldo: "+getSueldo();
 	}
 }
