@@ -1,4 +1,4 @@
-#1 Instrucciones para completar esta practica.
+# Instrucciones para completar esta practica.
 
 1. Completar las dos **clases**.
 2. Aplicar metodos.
